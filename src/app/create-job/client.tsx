@@ -1,7 +1,7 @@
 "use client";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import InputWithLabel from "../jobs/input-job";
-import { DropDown } from "@/components/navbar/DropDown";
+import { DropDown } from "@/components/DropDown";
 
 const initialState = {
   title: "",
