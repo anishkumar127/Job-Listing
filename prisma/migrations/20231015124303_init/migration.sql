@@ -3,6 +3,7 @@ CREATE TABLE "JobListing" (
     "id" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "companyName" TEXT NOT NULL,
+    "salary" TEXT NOT NULL,
     "location" TEXT NOT NULL,
     "type" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
