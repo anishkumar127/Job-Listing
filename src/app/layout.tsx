@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
+import { TProvider } from "@/components/toast";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="dark">
+        <TProvider/>
         <Navbar />
         {children}
       </body>

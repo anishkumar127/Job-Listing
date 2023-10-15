@@ -2,6 +2,10 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import InputWithLabel from "../jobs/input-job";
 import { DropDown } from "@/components/DropDown";
+import SubmitButton from "@/components/submit-button";
+import createJobs from "@/actions/create-job";
+import toast from "react-hot-toast";
+import { redirect } from "next/navigation";
 
 const initialState = {
   title: "",
@@ -34,7 +38,14 @@ export default function CreateJobClient() {
 
   return (
     <div>
-      <form action="" className="container grid-cols-4 gap-12">
+      <form
+        action={async (FormData) => {
+          await createJobs(FormData);
+          toast.success("Created Successfully");
+          redirect("/jobs");
+        }}
+        className="container mx-auto grid grid-cols-4 gap-8"
+      >
         <InputWithLabel
           type="text"
           label="title"
@@ -71,8 +82,9 @@ export default function CreateJobClient() {
           name="salary"
           onChange={onChange}
         />
-        <input type="hidden" value={value} name="type" onChange={onChange}/>
+        <input type="hidden" value={value} name="type" onChange={onChange} />
         <DropDown value={value} setValue={setValue} jobType={jobType} />
+        <SubmitButton />
       </form>
     </div>
   );
