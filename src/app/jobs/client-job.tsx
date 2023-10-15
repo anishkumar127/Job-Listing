@@ -3,7 +3,7 @@
 import { JobListing } from "@prisma/client";
 import { ChangeEvent, useState } from "react";
 import InputWithLabel from "./input-job";
-import { DropDown } from "@/components/navbar/DropDown";
+import { DropDown } from "@/components/DropDown";
 
  type ClientJob = {
   jobs: JobListing[];
