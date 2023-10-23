@@ -38,7 +38,7 @@ export default function Card({
       <div className="pt-6 ml-auto mr-2 flex gap-4">
         <form action="">
           <input type="hidden" name="jobId" value={id} id="jobId" />
-          <SubmitButton />
+          <SubmitButton label="Delete"/>
         </form>
         <Button onClick={() => router.push(`/jobs/${id}`)}>View More</Button>
       </div>
