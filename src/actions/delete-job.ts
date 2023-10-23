@@ -1,6 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
 export default async function deleteJob(data: FormData) {
   const jobId = data.get("jobId") as string;
@@ -9,4 +10,5 @@ export default async function deleteJob(data: FormData) {
       id: jobId,
     },
   });
+  revalidatePath("/jobs");
 }
