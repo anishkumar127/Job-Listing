@@ -1,11 +1,14 @@
 import React from "react";
 import ClientJob from "./client-job";
-function page() {
+import { prisma } from "@/lib/prisma";
+async function page() {
+  // const jobs = await getAllJobs();
+  const jobs = await prisma.jobListing.findMany({});
   return (
     <div>
       <h1 className="text-[3rem] container py-4">Job Listing</h1>
       <div>
-        <ClientJob />
+        <ClientJob jobs={jobs} />
       </div>
     </div>
   );
