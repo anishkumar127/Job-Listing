@@ -14,6 +14,7 @@ model JobListing {
   id String @id @default(uuid())
   title String
   companyName String
+  salary String
   location String
   type String
   createdAt DateTime @default(now())
